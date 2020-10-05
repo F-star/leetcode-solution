@@ -3,8 +3,6 @@
  *
  * [46] Permutations
  */
-package permute
-
 // @lc code=start
 func permute(nums []int) [][]int {
 	// init
