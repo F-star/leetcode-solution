@@ -12,13 +12,6 @@
  *     Next *ListNode
  * }
  */
-package main
-
-// type ListNode struct {
-// 	Val  int
-// 	Next *ListNode
-// }
-
 func partition(head *ListNode, x int) *ListNode {
 
 	var left *ListNode = nil
@@ -49,13 +42,14 @@ func partition(head *ListNode, x int) *ListNode {
 		p = p.Next
 	}
 
-	if left == nil {
+	if leftHead == nil {
 		return rightHead
-	} else {
-		left.Next = rightHead
-		return leftHead
 	}
-
+	left.Next = rightHead
+	if right != nil {
+		right.Next = nil // this is important! otherwise will result a circle
+	}
+	return leftHead
 }
 
 // @lc code=end
