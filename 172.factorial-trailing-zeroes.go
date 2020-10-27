@@ -6,10 +6,22 @@
 
 // @lc code=start
 func trailingZeroes(n int) int {
-	// 3! = 1 * 2 * 3 = 6
-	// 5! = 1 * 2 * 3 * 4 * 5 = 120
-	// TODO: to finish
-	return n / 5 + n / 25
+	count := 0
+	for i := 5; i <= n; i += 5 {
+		count++
+		d := i / 5
+		for {
+			if d%5 == 0 {
+				count++
+			} else {
+				break
+			}
+			d = d / 5
+		}
+
+	}
+	return count
 }
+
 // @lc code=end
 
